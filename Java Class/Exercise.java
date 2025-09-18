@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 
 public class Exercise {
-    public static void main(String[] args){
+    public static void main(Immutable[] args){
         // System.out.print("Numbers from 1 to 10: \n");
         // for(int i = 1; i <= 10; i++){
         //     System.out.println(i);

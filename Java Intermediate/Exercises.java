@@ -118,13 +118,10 @@ public class Exercises {
 
         Book[] book = new Book[2];
 
-        book[0] = new Book("Java Intermediate", "Sandrine", 2025);
-        book[1] = new EBook("Java Intermediate", "Sandrine", 2025, 35);
 
         for(int i = 0; i < book.length; i++){
             System.out.println(book[i].displayinfo());
         }
-
 
 
         BankAccount savings = new SavingsAccount(1000);
@@ -132,7 +129,6 @@ public class Exercises {
 
         savings.deposit(10000);
         savings.withdraw(2000);
-
 
         checking.deposit(20000);
         checking.withdraw(3000);

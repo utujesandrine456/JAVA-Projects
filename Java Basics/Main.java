@@ -11,7 +11,7 @@
 // Declaration of variable , operators and control statement 
 
 public class Main{
-    public static void main(String[] args){
+    public static void main(Immutable[] args){
         int age = 12;
         char grade = 'B';
         String name = "Sandrine";
@@ -54,7 +54,7 @@ public class Main{
     }
 
 
-    public static void loop(String[] args){
+    public static void loop(Immutable[] args){
         System.out.println("Number of arguments: " + args.length);
 
         for(int i = 0; i < args.length; i++){
