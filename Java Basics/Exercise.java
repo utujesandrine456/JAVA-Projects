@@ -1,19 +1,18 @@
-class Student{
+// class Student{
+//     private String name;
+//     private int age;
+//     private char grade;
 
-    private String name;
-    private int age;
-    private char grade;
+//     public Student(String name, int age, char grade){
+//         this.name = name;
+//         this.age = age;
+//         this.grade = grade;
+//     }
 
-    public Student(String name, int age, char grade){
-        this.name = name;
-        this.age = age;
-        this.grade = grade;
-    }
-
-    public String displayinfo(){
-        return "Name: " + name + ", Age: " + age + ", Grade: " + grade;
-    }
-}
+//     public String displayinfo(){
+//         return "Name: " + name + ", Age: " + age + ", Grade: " + grade;
+//     }
+// }
 
 
 class Animal{
@@ -23,38 +22,38 @@ class Animal{
 }
 
 
-class Cat extends Animal{
-    public void makeSound(){
-        System.out.println("Meow");
-    }
-}
+// class Cat extends Animal{
+//     public void makeSound(){
+//         System.out.println("Meow");
+//     }
+// }
 
 
-class Dog extends Animal{
-    public void makeSound(){
-        System.out.println("Woof");
-    }
-}
+// class Dog extends Animal{
+//     public void makeSound(){
+//         System.out.println("Woof");
+//     }
+// }
 
 
-interface Vehicle{
-    void start();
-}
+// interface Vehicle{
+//     void start();
+// }
 
-class Car implements Vehicle{
-    @Override
-    public void start(){
-        System.out.println("Car started ...");
-    }
-}
+// class Car implements Vehicle{
+//     @Override
+//     public void start(){
+//         System.out.println("Car started ...");
+//     }
+// }
 
 
-class Bike implements Vehicle{
-    @Override
-    public void start(){
-        System.out.println("Bike started ...");
-    }
-}
+// class Bike implements Vehicle{
+//     @Override
+//     public void start(){
+//         System.out.println("Bike started ...");
+//     }
+// }
 
 
 class BankAccount {
@@ -150,11 +149,11 @@ class Piano extends Instrument implements Playable{
 public class Exercise {
     public static void main(String[] args){
 
-        Student s1 = new Student("Alice", 20, 'A');
-        Student s2 = new Student("Baraka", 17, 'B');
+        // Student s1 = new Student("Alice", 20, 'A');
+        // Student s2 = new Student("Baraka", 17, 'B');
 
-        System.out.println(s1.displayinfo());
-        System.out.println(s2.displayinfo());
+        // System.out.println(s1.displayinfo());
+        // System.out.println(s2.displayinfo());
 
 
         // Animal mycat = new Cat();
@@ -165,22 +164,22 @@ public class Exercise {
 
         Animal[] animals = new Animal[2];
 
-        animals[0] = new Cat();
-        animals[1] = new Dog();
+        // animals[0] = new Cat();
+        // animals[1] = new Dog();
 
 
         for(int i = 0; i < animals.length; i++){
             animals[i].makeSound();
         }
 
-        Vehicle[] vehicles = new Vehicle[2];
+        // Vehicle[] vehicles = new Vehicle[2];
 
-        vehicles[0] = new Car();
-        vehicles[1] = new Bike();
+        // vehicles[0] = new Car();
+        // vehicles[1] = new Bike();
 
-        for(int i = 0; i < vehicles.length; i++){
-            vehicles[i].start();
-        }
+        // for(int i = 0; i < vehicles.length; i++){
+        //     vehicles[i].start();
+        // }
 
 
         BankAccount myaccount = new BankAccount(23424124125124.098890);

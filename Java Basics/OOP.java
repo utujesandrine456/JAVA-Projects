@@ -61,6 +61,38 @@ class Dogs extends Animals {
 }
 
 
+
+interface Developer {
+    void develop();
+}
+
+class FrontendDeveloper implements Developer {
+    public void develop() {
+        System.out.println("Building UI with React");
+    }
+}
+
+class BackendDeveloper implements Developer {
+    public void develop() {
+        System.out.println("Building APIs with Java");
+    }
+}
+
+class Project {
+    Developer dev;
+
+    Project(Developer dev) {
+        this.dev = dev;
+    }
+
+    public void start() {
+        dev.develop();
+    }
+}
+
+
+
+
 public class OOP{
     public static void main(String[] args){
         
@@ -73,6 +105,13 @@ public class OOP{
         Dogs ds = new Dogs();
         ds.sound();
         ds.sleep();
+
+
+        Project p1 = new Project(new FrontendDeveloper());
+        Project p2 = new Project(new BackendDeveloper());
+
+        p1.start();
+        p2.start();
     }
 }
 

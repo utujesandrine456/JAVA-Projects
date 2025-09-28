@@ -1,8 +1,10 @@
 class Computer {
     String brandname;
+    String color;
     
-    Computer(String brandname){
+    Computer(String brandname, String color){
         this.brandname = brandname;
+        this.color = color;
     }
 
     void playmusic(){
@@ -16,9 +18,11 @@ class Computer {
 
 
 class Laptop extends Computer{
+    String number;
     
-    Laptop(String brandname ){
-        super(brandname);
+    Laptop(String brandname, String color, String number ){
+        super(brandname, color);
+        this.number = number;
     };
 
     String display(){
@@ -33,8 +37,8 @@ class Laptop extends Computer{
 
 class Desktop extends Computer{
     
-    Desktop(String brandname ){
-        super(brandname);
+    Desktop(String brandname, String color ){
+        super(brandname, color);
     };
 
     String display(){
@@ -48,11 +52,10 @@ class Desktop extends Computer{
 
 
 
-
 public class Super {
     public static void main(String[] args){
-        Computer laptop = new Laptop("HP computer");
-        Computer desktop = new Desktop("Desktop computer");
+        Computer laptop = new Laptop("HP computer", "white", "12");
+        Computer desktop = new Desktop("Desktop computer", "white");
         laptop.playmusic();
         System.out.println("Laptopinfo: " + laptop.display());
 
@@ -60,4 +63,3 @@ public class Super {
         System.out.println("Laptopinfo: " + desktop.display());
     }
 }
-
