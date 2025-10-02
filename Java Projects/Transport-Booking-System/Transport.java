@@ -37,7 +37,7 @@ class Bus extends TransportSystem{
     }
 
     void start(){
-        System.out.println("Bus is going to start to move" + "and moves with speed of " + getSpeed() + " and  has a capacity of " +  getCapacity());
+        System.out.println("Bus is going to start to move" + " and moves with speed of " + getSpeed() + " and  has a capacity of " +  getCapacity());
     }
 
     void move(){
@@ -129,6 +129,7 @@ public class Transport{
 
         System.out.print("Enter capacity: ");
         int capacity = sc.nextInt();
+        sc.close();
 
 
         if(choice == 1){

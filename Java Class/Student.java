@@ -1,14 +1,14 @@
-class StudentName{
-    private String name;
+// class StudentName{
+//     private String name;
 
-    StudentName(String name){
-        this.name = name;
-    }
+//     StudentName(String name){
+//         this.name = name;
+//     }
 
-    public String getname(){
-        return name;
-    }
-}
+//     public String getname(){
+//         return name;
+//     }
+// }
   
 
 class StudentHello{
@@ -26,10 +26,10 @@ class StudentHello{
 public class Student {
     public static void main(String[] args){
         StudentHello s = new StudentHello();
-        StudentName s2 = new StudentName("Sandrine");
+        // StudentName s2 = new StudentName("Sandrine");
 
         System.out.println("New student: " + s.getname());
-        System.out.println("New student: " + s2.getname());
+        // System.out.println("New student: " + s2.getname());
         
     }
 }

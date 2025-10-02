@@ -57,36 +57,36 @@ class Manager extends Employee{
 // }
 
 
-class BankAccount{
-    double amount;
-    double time;
-    static double interestRate;
+// class BankAccount{
+//     double amount;
+//     double time;
+//     static double interestRate;
 
-    BankAccount(double amount,  double time, double interestRate ){
-        this.amount = amount;
-        this.time = time;
-        this.interestRate = interestRate;
-    }
-
-
-    void calculate(){
-        double simpleinterest = (amount * time * interestRate) / 100;
-        System.out.println("The simple interest is : " + simpleinterest);
-    }
+//     BankAccount(double amount,  double time, double interestRate ){
+//         this.amount = amount;
+//         this.time = time;
+//         this.interestRate = interestRate;
+//     }
 
 
-    double getter(){
-        return interestRate;
-    }
+//     void calculate(){
+//         double simpleinterest = (amount * time * interestRate) / 100;
+//         System.out.println("The simple interest is : " + simpleinterest);
+//     }
 
 
-    void setter(double interestRate){
-        this.interestRate = interestRate;
+//     double getter(){
+//         return interestRate;
+//     }
 
-        calculate();
-    }
 
-}
+//     void setter(double interestRate){
+//         this.interestRate = interestRate;
+
+//         calculate();
+//     }
+
+// }
 
 
 class Vehicle{
@@ -120,19 +120,19 @@ class September19{
         // dog2.bark();
 
 
-        BankAccount sandrine = new BankAccount(200000.00, 2.00, 5.00);
-        BankAccount landra = new BankAccount(750000.00, 3.00, 16.00);
-        BankAccount bubuna = new BankAccount(200000.00, 2.00, 5.00);
-        BankAccount rodger = new BankAccount(750000.00, 3.00, 16.00);
+        // BankAccount sandrine = new BankAccount(200000.00, 2.00, 5.00);
+        // BankAccount landra = new BankAccount(750000.00, 3.00, 16.00);
+        // BankAccount bubuna = new BankAccount(200000.00, 2.00, 5.00);
+        // BankAccount rodger = new BankAccount(750000.00, 3.00, 16.00);
         
-        sandrine.calculate();
-        landra.calculate();
-        bubuna.calculate();
-        rodger.calculate();
+        // sandrine.calculate();
+        // landra.calculate();
+        // bubuna.calculate();
+        // rodger.calculate();
 
-        sandrine.getter(); sandrine.setter(26);
-        landra.getter(); landra.setter(22);
-        bubuna.getter(); bubuna.setter(6);
-        rodger.getter(); rodger.setter(36);
+        // sandrine.getter(); sandrine.setter(26);
+        // landra.getter(); landra.setter(22);
+        // bubuna.getter(); bubuna.setter(6);
+        // rodger.getter(); rodger.setter(36);
     }
 }

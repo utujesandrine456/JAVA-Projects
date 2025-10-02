@@ -15,11 +15,11 @@
 // }
 
 
-class Animal{
-    public void makeSound(){
-        System.out.println("Animal makes sound");
-    }
-}
+// class Animal{
+//     public void makeSound(){
+//         System.out.println("Animal makes sound");
+//     }
+// }
 
 
 // class Cat extends Animal{
@@ -162,15 +162,15 @@ public class Exercise {
         // mycat.makeSound();
         // mydog.makeSound();
 
-        Animal[] animals = new Animal[2];
+        // Animal[] animals = new Animal[2];
 
         // animals[0] = new Cat();
         // animals[1] = new Dog();
 
 
-        for(int i = 0; i < animals.length; i++){
-            animals[i].makeSound();
-        }
+        // for(int i = 0; i < animals.length; i++){
+        //     animals[i].makeSound();
+        // }
 
         // Vehicle[] vehicles = new Vehicle[2];
 

@@ -1,64 +1,64 @@
- interface Vehicle{
-        void drive();
-}
+//  interface Vehicle{
+//         void drive();
+// }
 
 
-class Car implements Vehicle{
-    public void drive(){
-        System.out.println("My car is driving ...");
-    }
-}
+// class Car implements Vehicle{
+//     public void drive(){
+//         System.out.println("My car is driving ...");
+//     }
+// }
 
-class Animal {
-    private String name;
+// class Animal {
+//     private String name;
 
-    public Animal(String name){
-        this.name = name;
-    }
+//     public Animal(String name){
+//         this.name = name;
+//     }
 
-    public String getName(){
-        return name;
-    }
+//     public String getName(){
+//         return name;
+//     }
 
-    public void setName(String name){
-        this.name = name;
-    }
+//     public void setName(String name){
+//         this.name = name;
+//     }
 
-    public void makeSound(){
-        System.out.println("Make sound mouw moumw mouwm !!");
-    }
-}
-
-
-class Dog extends Animal{
-
-    public Dog(String name){
-        super(name);
-    }
+//     public void makeSound(){
+//         System.out.println("Make sound mouw moumw mouwm !!");
+//     }
+// }
 
 
-    @Override
-    public void makeSound(){
-        System.out.println(getName() + " says: Woof Woof !!");
-    }
+// class Dog extends Animal{
 
-}
-
-
-abstract class Animals {
-    abstract void sound();
-    void sleep(){
-        System.out.println("Zzz...");
-    }
-}
+//     public Dog(String name){
+//         super(name);
+//     }
 
 
-class Dogs extends Animals {
+//     @Override
+//     public void makeSound(){
+//         System.out.println(getName() + " says: Woof Woof !!");
+//     }
 
-    void sound() {
-        System.out.println("Woof Woof");
-    }
-}
+// }
+
+
+// abstract class Animals {
+//     abstract void sound();
+//     void sleep(){
+//         System.out.println("Zzz...");
+//     }
+// }
+
+
+// class Dogs extends Animals {
+
+//     void sound() {
+//         System.out.println("Woof Woof");
+//     }
+// }
 
 
 
@@ -96,15 +96,15 @@ class Project {
 public class OOP{
     public static void main(String[] args){
         
-        Dog d = new Dog("Bobby");
-        d.makeSound();
+        // Dog d = new Dog("Bobby");
+        // d.makeSound();
 
-        Vehicle myvehicle = new Car();
-        myvehicle.drive();
+        // Vehicle myvehicle = new Car();
+        // myvehicle.drive();
 
-        Dogs ds = new Dogs();
-        ds.sound();
-        ds.sleep();
+        // Dogs ds = new Dogs();
+        // ds.sound();
+        // ds.sleep();
 
 
         Project p1 = new Project(new FrontendDeveloper());

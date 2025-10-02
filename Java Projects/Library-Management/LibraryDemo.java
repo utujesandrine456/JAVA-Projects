@@ -43,7 +43,7 @@ class Student extends Person {
     public void borrowBook(Book b) {
         if (b.isAvailable()) {
             b.setAvailable(false);
-            System.out.println(name + " borrowed " + b.getTitle());
+            System.out.println(name + " borrowed " + b.getTitle() + "studies in " + department);
         } else {
             System.out.println(b.getTitle() + " is not available.");
         }
@@ -89,7 +89,6 @@ class StaffUser extends LibraryUser {
         System.out.println(name + " manages library.");
     }
 }
-
 
 
 public class LibraryDemo {
