@@ -56,7 +56,7 @@ To explore or run any project:
 
 Clone this repository:
 
-git clone https://github.com/your-username/java-projects.git
+git clone (https://github.com/utujesandrine456/JAVA-Projects.git)
 
 
 Open the project in your preferred IDE (IntelliJ IDEA / Eclipse / VS Code).
@@ -79,5 +79,6 @@ Solve real-world problems with clean, efficient code.
 📌 Status
 
 ✅ Active Development – I will keep adding new exercises, projects, and improvements as I continue learning.
+
 
 
