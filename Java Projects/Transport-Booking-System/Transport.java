@@ -1,113 +1,125 @@
+import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-abstract class TransportSystem{
+
+class Person{
+    protected String name;
+    public int id = 0;
+    protected String location;
+    protected ArrayList<TransportSystem> bookedTransports = new ArrayList<>();
+
+
+    Person(int id, String name,  String location){
+        this.id = id;
+        this.name = name;
+        this.location = location;
+    }
+
+
+    public void bookTransport(TransportSystem ts){
+        if(ts.getVehicle() > 0){
+            ts.reduceVehicle();
+            bookedTransports.add(ts);
+            System.out.println(name + " booked a " + ts.getClass().getSimpleName() + " to " + location + " at " + ts.getTime() );
+            System.out.println("Fare: " + ts.getPrice());
+        }else{
+            System.out.println(" Sorry no" + ts.getClass().getSimpleName() + " available");
+        }
+    }
+
+
+    public void showBookings(){
+        System.out.println("Booking summary for" + name);
+        double totalfare = 0;
+
+        for(TransportSystem t: bookedTransports){
+            System.out.println('-' + t.getClass().getSimpleName() + " to " + location + "(" + t.getPrice() + " Frw)" );
+            totalfare += t.getPrice();
+        }
+
+        System.out.println("Total Fare: " + totalfare + " Frw" );
+    }
+}
+
+
+abstract class TransportSystem {
     private double speed;
     private int capacity;
+    private String time;
+    private double price;
+
 
     abstract void start();
     abstract void stop();
     abstract void move();
+    abstract int getVehicle();
+    abstract void reduceVehicle();
 
 
-    TransportSystem(double speed, int capacity){
+    public TransportSystem( String time, double speed, int capacity , double price){
+        this.time = time;
         this.speed = speed;
         this.capacity = capacity;
+        this.price = price;
     }
 
-    double getSpeed(){
-        return speed;
-    }
-
-    int getCapacity(){
-        return capacity;
-    }
-
-    void setter(double speed, int capacity){
-        this.speed = speed;
-        this.capacity = capacity;
-    }
+    
+    public double getSpeed(){return speed; }
+    public int getCapacity(){return capacity; }
+    public double getPrice(){return price; }
+    public String getTime(){return time; }
+    
 }
 
 
 
 class Bus extends TransportSystem{
+    private static int vehicle = 3;
 
-    Bus(double speed, int capacity){
-        super(speed, capacity);
+    Bus(String time, double speed, int capacity, double price){
+            super(time, speed, capacity, price);
     }
 
-    void start(){
-        System.out.println("Bus is going to start to move" + " and moves with speed of " + getSpeed() + " and  has a capacity of " +  getCapacity());
-    }
+    void start() { System.out.println("Bus starting with speed " + getSpeed()); }
+    void move() { System.out.println("Bus is picking passengers."); }
+    void stop() { System.out.println("Bus stopped."); }
 
-    void move(){
-        System.out.println("Bus is picking up passengers");
-    }
-
-    void stop(){
-        System.out.println("Bus has stopped.");
-    }
-
+    public int getVehicle(){ return vehicle;}
+    public void reduceVehicle(){ vehicle--; }
 }
 
 
 
 class Car extends TransportSystem{
-
-    Car(double speed, int capacity){
-        super(speed, capacity);
+    private static int vehicle = 2;
+    
+    Car(String time, double speed, int capacity, double price){
+            super(time, speed, capacity, price);
     }
 
-    void start(){
-        System.out.println("Car is going to start to move" + "and moves with speed of " + getSpeed() + " and  has a capacity of " +  getCapacity());
-    }
+    void start() { System.out.println("Car starting with speed " + getSpeed()); }
+    void move() { System.out.println("Car driving on the road."); }
+    void stop() { System.out.println("Car stopped."); }
 
-    void move(){
-        System.out.println("Car is driving on the road ");
-    }
-
-    void stop(){
-        System.out.println("Car has stopped.");
-    }
-
+    public int getVehicle(){ return vehicle;}
+    public void reduceVehicle(){ vehicle--; }
 }
 
 
 
 class Bike extends TransportSystem{
+    private static int vehicle = 1;
 
-    Bike(double speed, int capacity){
-        super(speed, capacity);
+    Bike(String time, double speed, int capacity, double price) {
+        super(time, speed, capacity, price);
     }
+    void start() { System.out.println("Bike starting with speed " + getSpeed()); }
+    void move() { System.out.println("Bike is pedaling."); }
+    void stop() { System.out.println("Bike stopped."); }
 
-    void start(){
-        System.out.println("Bike is going to start to move" + "and moves with speed of " + getSpeed() + " and  has a capacity of " +  getCapacity());
-    }
-
-    void move(){
-        System.out.println("Bike is pedaling ");
-    }
-
-    void stop(){
-        System.out.println("Bike has stopped.");
-    }
-
-}
-
-
-class Person{
-    String name;
-
-    Person(String name){
-        this.name = name;
-    }
-
-    void bookTransport(TransportSystem ts){
-        System.out.println(name + "  booked a transport");
-        ts.start();
-        ts.move();
-        ts.stop();  
-    }
+    public int getVehicle(){ return vehicle;}
+    public void reduceVehicle(){ vehicle--; }
 }
 
 
@@ -116,30 +128,77 @@ class Person{
 public class Transport{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
+        int userId = 1; 
 
         System.out.print("Enter your name: ");
-        String username = sc.nextLine();
-        Person p = new Person(username);
+        String username = sc.next();
 
-        System.out.println("Choose tranport: 1. Bus   2. Car   3. Bike");
-        int choice = sc.nextInt();
-
-        System.out.print("Enter speed: ");
-        double speed = sc.nextDouble();
-
-        System.out.print("Enter capacity: ");
-        int capacity = sc.nextInt();
-        sc.close();
+        System.out.print("Enter destination: ");
+        String location = sc.next();
 
 
-        if(choice == 1){
-            p.bookTransport(new Bus(speed, capacity));
-        } else if(choice == 2){
-            p.bookTransport(new Car(speed, capacity));
-        } else if(choice == 3){
-            p.bookTransport(new Bike(speed, capacity));
-        } else{
-            System.out.println("This Transport method does not exist !!!");
+        Person p = new Person(userId, username, location);
+        
+
+        boolean available = true;
+
+        while(available) {
+            System.out.println("Choose Tranport:   1. Bus   2. Car   3. Bike   4. Show Bookings   5. Exit");
+            int choice;
+
+            try{
+                choice = sc.nextInt();
+
+                if(choice == 5){
+                    System.out.println("Good Bye!!");
+                    break;
+                }
+
+                if(choice == 4){
+                    p.showBookings();
+                    continue;
+                }
+
+                System.out.print("Enter speed: ");
+                double speed = sc.nextDouble();
+                if(speed <= 0) throw new IllegalArgumentException("Speed must be positive");
+
+                System.out.print("Enter capacity: ");
+                int capacity = sc.nextInt();
+                if(capacity <= 0) throw new IllegalArgumentException("Capacity must be positive");
+
+                System.out.print("Enter Price: ");
+                double price = sc.nextDouble();
+                if(price <= 0) throw new IllegalArgumentException("Price must be positive");
+
+                System.out.print("Enter Time for departure (eg: 10:30 AM): ");
+                sc.nextLine();
+                String time = sc.nextLine();
+                
+                switch (choice) {
+                    case 1:
+                        p.bookTransport(new Bus(time, speed, capacity, price));
+                        break;
+                    case 2:
+                        p.bookTransport(new Car(time, speed, capacity, price));
+                        break;
+                    case 3:
+                        p.bookTransport(new Bike(time, speed, capacity, price));
+                        break;
+                    default:
+                        System.out.println("Invalid Choice !!");
+                }
+
+            }catch(InputMismatchException e){
+                System.out.println("Invalid input! Please enter numbers only.");
+                sc.nextLine();
+            }catch(IllegalArgumentException e){
+                System.out.println(e.getMessage());
+            }
         }
+
+        sc.close();
     }
+
+    
 }

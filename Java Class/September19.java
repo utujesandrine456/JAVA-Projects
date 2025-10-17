@@ -96,12 +96,12 @@ class Vehicle{
 }
 
 
-class Car extends Vehicle{
-    Car(){
-        super();
-        System.out.println();
-    }
-}
+// class Car extends Vehicle{
+//     Car(){
+//         super();
+//         System.out.println();
+//     }
+// }
 
 
 class September19{

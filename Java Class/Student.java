@@ -23,14 +23,14 @@ class StudentHello{
     }
 }
 
-public class Student {
-    public static void main(String[] args){
-        StudentHello s = new StudentHello();
-        // StudentName s2 = new StudentName("Sandrine");
+// public class Student {
+//     public static void main(String[] args){
+//         StudentHello s = new StudentHello();
+//         // StudentName s2 = new StudentName("Sandrine");
 
-        System.out.println("New student: " + s.getname());
-        // System.out.println("New student: " + s2.getname());
+//         System.out.println("New student: " + s.getname());
+//         // System.out.println("New student: " + s2.getname());
         
-    }
-}
+//     }
+// }
 
