@@ -1,9 +1,5 @@
-// import java.util.Scanner;
-// import java.util.Arrays;
-
-
 public class Exercise {
-    public static void main(Immutable[] args){
+    public static void main(String[] args){
         // System.out.print("Numbers from 1 to 10: \n");
         // for(int i = 1; i <= 10; i++){
         //     System.out.println(i);
@@ -15,9 +11,9 @@ public class Exercise {
         //     if(number % 2 == 0){
         //         System.out.println(number);
         //     }
-        //     number ++;
+        //     number += 2;
         // }
-
+    
 
         // int sum = 0 ;
         // for(int i = 1; i <= 10; i++){
@@ -75,6 +71,26 @@ public class Exercise {
         // }
         // System.out.println("Element not found");
 
+
+        // int arr[] = {10, 20, 121, 12, 1231, 232, 4545};
+        // int element = 1231;
+
+        // for(int i = 0; i<7; i++){
+        //     if(arr[i] == element){
+        //         System.out.println("Element found at index: " + i);
+        //     }
+        // }
+
+        // System.out.println("Element not found !!!");
+
+
+
+        // String[] students = {"UWASE", "UTUJE", "Sandrine", "Bubuna"};
+        // Arrays.sort(students);
+
+        // for(String student: students){
+        //     System.out.println(student);
+        // }
 
 
         // int number = 5;
@@ -152,8 +168,6 @@ public class Exercise {
         // }
 
 
-
-
         // Scanner scanner = new Scanner(System.in);
         // System.out.println("Enter vowel or consonant: ");
         // String string = scanner.next();
@@ -182,7 +196,6 @@ public class Exercise {
         // }
 
 
-
         // int arr[] = {10, 20, 212, 23 , 57, 134, 675};
         // int sum = 0;
         // int average = 0;
@@ -206,7 +219,6 @@ public class Exercise {
         // System.out.println("The average age is : " + avg);
 
 
-
         // String[] cars={"Sandrine", "Baraka", "Slanie", "Pacifique", "Liberee", "Appolinaire"};
         // Arrays.sort(cars);
         // for(String car: cars){
@@ -214,21 +226,22 @@ public class Exercise {
         //     System.out.println("\n");
         // }
 
-        int number = 10;
 
-        for(int i = 0; i <= number; i++){
-            System.out.println(Fibonacci(i));
-        }
-    }
+        //    int number = 10;
+        //     for(int i = 0; i <= number; i++){
+        //         System.out.println(Fibonacci(i));
+        //     }
+        // }
 
 
-    static int Fibonacci(int n){
-        if(n == 0){
-            return 0;
-        }else if(n == 1){
-            return 1;
-        }else{
-            return Fibonacci(n - 1) + Fibonacci(n - 2);
-        }
+        // static int Fibonacci(int n){
+        //     if(n == 0){
+        //         return 0;
+        //     }else if(n == 1){
+        //         return 1;
+        //     }else{
+        //          return Fibonacci(n - 1) + Fibonacci(n - 2);
+        //     }
+        // }
     }
 }

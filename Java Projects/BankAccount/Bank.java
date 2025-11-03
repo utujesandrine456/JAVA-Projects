@@ -4,7 +4,6 @@ class Person {
     int id;
     String name;
     String dob;
-    int accountnumber;
 
     Person(int id, String name, String dob){
         this.id = id;
@@ -72,8 +71,6 @@ public class Bank {
         Account kigali = new Account(id, username, date, number);
 
 
-
-
         boolean available = true;
         do{
             System.out.println("1. Deposit 2. Withdraw 3. Exit");
@@ -102,7 +99,6 @@ public class Bank {
         }while(available);
         
         sc.close();
-        
     }
 }
 

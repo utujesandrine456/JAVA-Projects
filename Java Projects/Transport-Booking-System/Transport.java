@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.io.*;
+
 
 
 class Person{
@@ -30,15 +32,67 @@ class Person{
 
 
     public void showBookings(){
-        System.out.println("Booking summary for" + name);
+        System.out.println("Booking summary for: " + name);
         double totalfare = 0;
 
         for(TransportSystem t: bookedTransports){
-            System.out.println('-' + t.getClass().getSimpleName() + " to " + location + "(" + t.getPrice() + " Frw)" );
+            System.out.println('-' + t.getClass().getSimpleName() + " to " + location + "(" + t.getPrice() + "Frw)" );
             totalfare += t.getPrice();
         }
 
         System.out.println("Total Fare: " + totalfare + " Frw" );
+    }
+
+
+    public void saveBookings(){
+        try(FileWriter  writer = new FileWriter(name + "_bookings.txt", true)){
+            for(TransportSystem t : bookedTransports){
+                writer.write(t.getClass().getSimpleName() + "," + location + "," + t.getPrice() + "," + t.getTime() + "\n");
+            }
+
+            System.out.println("Booking Saved Successfully!!!!");
+        }catch(IOException e){
+            System.out.println("Error saving Bookings: " + e.getMessage());
+        }
+    }
+
+
+    public void loadBookings(){
+        File file = new File(name + "_bookings.txt");
+        if(!file.exists()){
+            System.out.println("No previous bookings found.");
+            return;
+        }
+
+
+        try(BufferedReader reader = new BufferedReader(new FileReader(file))){
+            String line;
+
+            while((line = reader.readLine()) != null){
+                String[] parts = line.split(",");
+                String type = parts[0];
+                // String loc = parts[1];
+                double price = Double.parseDouble(parts[2]);
+                String time = parts[3];
+
+
+
+                switch (type) {
+                    case "Bus":
+                        bookedTransports.add(new Bus(time,0,0, price));
+                        break;
+                    case "Car":
+                        bookedTransports.add(new Car(time,0,0,price));
+                        break;
+                    case "Bike":
+                        bookedTransports.add(new Bike(time,0,0, price));
+                        break;
+                }
+
+            }
+        }catch(IOException e){
+            System.out.println("Error loading booking: " + e.getMessage());
+        }
     }
 }
 
@@ -138,7 +192,7 @@ public class Transport{
 
 
         Person p = new Person(userId, username, location);
-        
+        p.loadBookings();
 
         boolean available = true;
 
@@ -175,15 +229,20 @@ public class Transport{
                 sc.nextLine();
                 String time = sc.nextLine();
                 
+                
+
                 switch (choice) {
                     case 1:
                         p.bookTransport(new Bus(time, speed, capacity, price));
+                        p.saveBookings();
                         break;
                     case 2:
                         p.bookTransport(new Car(time, speed, capacity, price));
+                        p.saveBookings();
                         break;
                     case 3:
                         p.bookTransport(new Bike(time, speed, capacity, price));
+                        p.saveBookings();
                         break;
                     default:
                         System.out.println("Invalid Choice !!");
