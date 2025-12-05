@@ -3,3 +3,10 @@ public class AgeException extends Exception {
         super(message);
     }
 }
+
+
+class HeightException extends Exception{
+    public HeightException(String message){
+        super(message);
+    }
+}

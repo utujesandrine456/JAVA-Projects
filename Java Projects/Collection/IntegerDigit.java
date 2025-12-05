@@ -9,12 +9,16 @@ class SortByLastDigit implements Comparator<Integer> {
     }
 }
 
+
 public class IntegerDigit {
     public static void main(String[] args) {
         List<Integer> integers = Arrays.asList(45, 32, 67, 89, 12, 90, 23);
 
-        integers.sort(Comparator.comparingInt( num -> num % 10));
-        System.out.println("Sorted By last digit: " + integers);
+        // integers.sort(Comparator.comparingInt( num -> num % 10));
+        // System.out.println("Sorted By last digit: " + integers);
+
+        Collections.sort(integers, new SortByLastDigit());
+        System.out.println("Comparator: " + integers);
     }
 }
 

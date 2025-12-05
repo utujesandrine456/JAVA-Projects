@@ -1,8 +1,6 @@
 import java.io.*;
 
 
-
-
 public class DataInput {
     public static void main(String[] args) {
         try(DataInputStream in = new DataInputStream(new FileInputStream("students.dat"))){

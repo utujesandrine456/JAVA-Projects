@@ -1,0 +1,2 @@
+Musanze|Gakenke|BUS|2000.0|4:00 pm
+Kigali|Kayonza|BUS|3000.0|12:00 AM

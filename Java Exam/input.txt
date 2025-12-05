@@ -1,0 +1,4 @@
+• a) Multiple constructors in interfaces 
+• b) Default and static methods in interfaces 
+• c) Private constructors in interfaces 
+• d) Inheritance for multiple classes

@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Printer<T extends Number>{
-    T valueToPrint;
+class Printer<Ts>{
+    Ts valueToPrint;
 
-    public Printer(T valueToPrint){
+    public Printer(Ts valueToPrint){
         super();
         this.valueToPrint = valueToPrint;
     }
@@ -46,6 +46,9 @@ public class PrinterMain {
         printer.print();
 
         Printer<Integer> printer2 = new Printer<>(123);
+        printer2.print();
+
+        Printer<String> printer3 = new Printer<>("Name");
         printer2.print();
 
         System.out.println(displayinfo(12.3, 16));

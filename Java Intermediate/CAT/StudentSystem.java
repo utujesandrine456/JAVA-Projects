@@ -39,9 +39,6 @@ public class StudentSystem {
            e.printStackTrace();
         }
 
-
-
-
         try(DataInputStream in = new DataInputStream(new FileInputStream("students.bin"))){
             int n = in.readInt();
 
