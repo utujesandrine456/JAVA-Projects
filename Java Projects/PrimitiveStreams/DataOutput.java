@@ -3,7 +3,6 @@ import java.util.*;
 
 
 
-
 public class DataOutput {
     
     static class  Student {

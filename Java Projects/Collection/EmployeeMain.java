@@ -69,6 +69,7 @@ class Employee implements Comparable<Employee> {
         result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
         result = prime * result + age;
         result = prime * result + salary;
+        
         return result;
     }
 

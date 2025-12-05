@@ -21,7 +21,6 @@ class Account extends Person{
     Account(int id, String name, String dob, int accountnumber){
         super(id, name, dob);
         this.accountnumber = accountnumber;
-        
     }
 
    

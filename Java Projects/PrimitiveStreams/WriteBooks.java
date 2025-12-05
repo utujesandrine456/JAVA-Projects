@@ -12,7 +12,7 @@ class Book implements Serializable {
 }
 
 
-public class WriteBooks implements Serializable {
+public class WriteBooks {
     public static void main(String[] args) throws IOException {
         List<Book> books = Arrays.asList(
             new Book("Java Basics","A. Author",29.99),
